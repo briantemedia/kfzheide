@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Termin buchen - Kfz-Service Heid</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Einfacher Header -->
+  <header class="termin-header">
+    <div class="termin-header-container">
+      <div class="logo">HEIDE LOGO</div>
+      <nav class="hero-nav">
+        <ul>
+          <li><a href="index.html#startseite">Startseite</a></li>
+          <li><a href="index.html#leistungen">Unsere Leistungen</a></li>
+          <li><a href="index.html#ueber-uns">Über uns</a></li>
+          <li><a href="index.html#kundenrezensionen">Kundenrezensionen</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Terminbuchung -->
+  <main class="termin-main">
+    <h1>Termin buchen</h1>
+    <p>Wählen Sie bitte ein Datum und eine Uhrzeit für Ihren Termin.</p>
+    <form class="termin-form">
+      <label for="date">Datum</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Uhrzeit</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Ihr Name"
+      />
+
+      <label for="phone">Telefon</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="Ihre Telefonnummer"
+      />
+
+      <label for="comment">Kommentar</label>
+      <textarea
+        id="comment"
+        name="comment"
+        placeholder="Möchten Sie uns noch etwas mitteilen?"
+      ></textarea>
+
+      <button type="submit">Termin anfragen</button>
+    </form>
+  </main>
+
+</body>
+</html>
