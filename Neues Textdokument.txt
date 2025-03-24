@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kfz-Service Heid - Ihre Autowerkstatt in Albertshofen</title>
+  <!-- Google Fonts für moderne, serifenlose Schrift -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    /* Basis-Reset und Grundstile */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?car,workshop') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+    }
+
+    /* Allgemeine Section-Stile */
+    section {
+      padding: 4rem 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    /* Unsere Leistungen */
+    .leistungen {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .leistung-item {
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
+    .leistung-item i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+
+    /* Über uns */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .about img {
+      max-width: 100%;
+      border-radius: 8px;
+      flex: 1 1 300px;
+    }
+    .about-text {
+      flex: 1 1 300px;
+    }
+
+    /* Termin buchen (Formular) */
+    .appointment-form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f7f7f7;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .appointment-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .appointment-form input,
+    .appointment-form select,
+    .appointment-form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .appointment-form button {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .appointment-form button:hover {
+      background-color: #002244;
+    }
+
+    /* Kontakt */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 2rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 2rem 0;
+    }
+    footer .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    footer a {
+      color: #fff;
+    }
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* Cookie-Hinweis */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .cookie-banner button {
+      background-color: #003366;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="#startseite"><strong>Kfz-Service Heid</strong></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#startseite">Startseite</a></li>
+          <li><a href="#leistungen">Unsere Leistungen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#termin-buchen">Termin buchen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="startseite" class="hero">
+    <div class="hero-content">
+      <h1>Kfz-Service Heid</h1>
+      <p>Ihre Autowerkstatt in Albertshofen</p>
+    </div>
+  </section>
+
+  <!-- Unsere Leistungen -->
+  <section id="leistungen">
+    <div class="container">
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <div class="leistungen">
+        <div class="leistung-item">
+          <i class="fas fa-tools"></i>
+          <h3>Inspektion</h3>
+        </div>
+        <div class="leistung-item">
+          <i class="fas fa-wrench"></i>
+          <h3>Reparatur</h3>
+        </div>
+        <div class="leistung-item">
+          <i class="fas fa-car-side"></i>
+          <h3>Reifenservice</h3>
+        </div>
+        <div class="leistung-item">
+          <i class="fas fa-check-circle"></i>
+          <h3>TÜV/AU</h3>
+        </div>
+        <div class="leistung-item">
+          <i class="fas fa-snowflake"></i>
+          <h3>Klimaservice</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns -->
+  <section id="ueber-uns">
+    <div class="container">
+      <h2 class="section-title">Über uns</h2>
+      <div class="about">
+        <img src="https://source.unsplash.com/600x400/?workshop" alt="Werkstatt">
+        <div class="about-text">
+          <p>Als familiengeführtes Unternehmen mit langjähriger Erfahrung steht der Kfz-Service Heid für Zuverlässigkeit und Qualität. Unser Team aus erfahrenen Mechanikern kümmert sich kompetent um Ihr Fahrzeug – von Inspektionen bis hin zu Reparaturen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Termin buchen -->
+  <section id="termin-buchen">
+    <div class="container">
+      <h2 class="section-title">Termin buchen</h2>
+      <form class="appointment-form">
+        <label for="appointment-date">Datum</label>
+        <input type="date" id="appointment-date" name="appointment-date" required>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+
+        <label for="phone">Telefon</label>
+        <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer" required>
+
+        <label for="service">Serviceart</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Bitte wählen</option>
+          <option value="inspektion">Inspektion</option>
+          <option value="reparatur">Reparatur</option>
+          <option value="reifenservice">Reifenservice</option>
+          <option value="tuev-au">TÜV/AU</option>
+          <option value="klimaservice">Klimaservice</option>
+        </select>
+
+        <button type="submit">Termin anfragen</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="container">
+      <h2 class="section-title">Kontakt</h2>
+      <div class="contact-info">
+        <p><strong>Adresse:</strong> Neue Flurstraße 19, 97320 Albertshofen</p>
+        <p><strong>Telefon:</strong> <a href="tel:01716598724">0171 6598724</a></p>
+        <p><strong>Öffnungszeiten:</strong> Montag–Freitag, 08:00–14:30 Uhr</p>
+      </div>
+      <!-- Google Maps Integration -->
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337940371125!2d10.61474011567423!3d49.719584979331154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47980f9f33b9c571%3A0x5b0e2b3a5a2e1d9e!2sNeue%20Flurstra%C3%9Fe%2019%2C%2097320%20Albertshofen!5e0!3m2!1sde!2sde!4v1616695828970!5m2!1sde!2sde" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <!-- Kontaktformular -->
+      <form class="appointment-form">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="contact-name" placeholder="Ihr Name" required>
+
+        <label for="contact-email">E-Mail</label>
+        <input type="email" id="contact-email" name="contact-email" placeholder="Ihre E-Mail-Adresse" required>
+
+        <label for="contact-message">Nachricht</label>
+        <input type="text" id="contact-message" name="contact-message" placeholder="Ihre Nachricht" required>
+
+        <button type="submit">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Kfz-Service Heid</p>
+      <p>
+        <a href="#impressum">Impressum</a> | 
+        <a href="#datenschutz">Datenschutzerklärung</a>
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie-Hinweis-Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <span>Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten. Durch die Nutzung der Website stimmen Sie der Verwendung zu.</span>
+    <button onclick="acceptCookies()">Akzeptieren</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      // Hier könnte in einer realen Anwendung auch die Cookie-Zustimmung gespeichert werden (z.B. per localStorage oder Cookie)
+    }
+  </script>
+</body>
+</html>
