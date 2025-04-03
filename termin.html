@@ -3,66 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Termin buchen - Kfz-Service Heid</title>
+  <title>Kfz-Service Heid</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <!-- Einfacher Header -->
-  <header class="termin-header">
-    <div class="termin-header-container">
-      <div class="logo">HEIDE LOGO</div>
+  <!-- Transparenter Header -->
+  <header class="hero-header">
+    <div class="hero-header-container">
+      <div class="logo">HEID LOGO</div>
       <nav class="hero-nav">
         <ul>
-          <li><a href="index.html#startseite">Startseite</a></li>
-          <li><a href="index.html#leistungen">Unsere Leistungen</a></li>
-          <li><a href="index.html#ueber-uns">Über uns</a></li>
-          <li><a href="index.html#kundenrezensionen">Kundenrezensionen</a></li>
-          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="#startseite">Startseite</a></li>
+          <li><a href="#leistungen">Unsere Leistungen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#kundenrezensionen">Kundenrezensionen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="termin.html">Termin buchen</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Terminbuchung -->
-  <main class="termin-main">
-    <h1>Termin buchen</h1>
-    <p>Wählen Sie bitte ein Datum und eine Uhrzeit für Ihren Termin.</p>
-    <form class="termin-form">
-      <label for="date">Datum</label>
-      <input type="date" id="date" name="date" required />
+  <!-- Hero-Sektion -->
+  <section id="startseite" class="hero-section">
+    <!-- Dunkles Overlay -->
+    <div class="hero-overlay"></div>
+    <!-- Zentrierter Text im Hero -->
+    <div class="hero-content">
+      <h1>FREIHEIT AUF DER STRASSE ERLEBEN</h1>
+      <p>
+        Steigen Sie ein. Moderne Fahrzeuge, einfache Buchung, Top-Service.  
+        Ihre Reise beginnt hier – komfortabel, schnell und sorgenfrei.
+      </p>
+      <div class="hero-buttons">
+        <a href="#leistungen" class="btn btn-primary">Unsere Leistungen</a>
+        <a href="termin.html" class="btn btn-secondary">Jetzt Termin sichern</a>
+      </div>
+    </div>
+    
+  </section>
 
-      <label for="time">Uhrzeit</label>
-      <input type="time" id="time" name="time" required />
+  <main>
+    <!-- Leistungen -->
+    <section id="leistungen" class="services-section">
+      <h2>Unsere Leistungen</h2>
+      <div class="services-container">
+        <!-- 1. Leistung -->
+        <div class="service-card">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1675810094948-d4634e766d2b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Mechaniker bei der Arbeit"
+          />
+          <h3>Motor-Diagnose</h3>
+          <p>
+            Mit moderner Diagnosetechnik sorgen wir dafür, dass Ihr Motor stets optimal läuft.
+          </p>
+        </div>
+        <!-- 2. Leistung -->
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1643701079732-3b1c7a797e3d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Autoreparatur"
+          />
+          <h3>Umfassende Reparaturen</h3>
+          <p>
+            Ob kleinere Schäden oder größere Instandsetzungen –  
+            wir kümmern uns fachgerecht um jedes Problem.
+          </p>
+        </div>
+        <!-- 3. Leistung -->
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1543747255-94b72995ac74?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Reifenservice"
+          />
+          <h3>Reifenservice</h3>
+          <p>
+            Wir wechseln, wuchten und lagern Ihre Reifen – damit Sie sicher und komfortabel fahren.
+          </p>
+        </div>
+         <!-- 4. Leistung -->
+<div class="service-card">
+  <img
+    src="https://www.check24.de/kfz-versicherung/automagazin/crop/948/626/img/artikel/ratgeber/tuev.jpg"
+    alt="TÜV"
+  />
+  <h3>TÜV & Hauptuntersuchung</h3>
+  <p>
+    Wir bereiten Ihr Fahrzeug optimal vor und begleiten Sie sicher durch die TÜV-Prüfung.
+  </p>
+</div>
 
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Ihr Name"
-      />
+<!-- 5. Leistung -->
+<div class="service-card">
+  <img
+    src="https://images.unsplash.com/photo-1556783151-c6d5e7d296bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="Abgasuntersuchung"
+  />
+  <h3>Abgasuntersuchung (AU)</h3>
+  <p>
+    Gründliche AU für die Einhaltung aller Emissionswerte – der Umwelt zuliebe.
+  </p>
+</div>
 
-      <label for="phone">Telefon</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        required
-        placeholder="Ihre Telefonnummer"
-      />
+<!-- 6. Leistung -->
+<div class="service-card">
+  <img
+    src="https://images.unsplash.com/photo-1625055930842-b9ad84b7facd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="Inspektion"
+  />
+  <h3>Inspektion nach Herstellervorgaben</h3>
+  <p>
+    Wir führen alle Wartungsarbeiten durch, damit Garantie und Leistung erhalten bleiben.
+  </p>
+</div>
+      </div>
+     
 
-      <label for="comment">Kommentar</label>
-      <textarea
-        id="comment"
-        name="comment"
-        placeholder="Möchten Sie uns noch etwas mitteilen?"
-      ></textarea>
+      <!-- Termin-Button unter den Leistungen -->
+      <div class="services-button">
+        <a href="termin.html" class="btn btn-primary">Termin buchen</a>
+      </div>
+    </section>
 
-      <button type="submit">Termin anfragen</button>
-    </form>
-  </main>
+    <!-- Über uns (abgegrenzter Bereich) -->
+    <section class="about-section">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Warum Sie uns wählen sollten</h2>
+          <h3>Kompletter Diagnoseservice für Ihr Fahrzeug</h3>
+          <p>
+            Fahrzeuge werden zunehmend komplexer – unser Team bleibt durch moderne Technik und Know-how immer auf dem neuesten Stand.  
+            Wir bieten Ihnen zuverlässige Services und individuelle Betreuung – vor Ort oder digital.
+          </p>
+          <ul>
+            <li>✅ Mobile Fahrzeugdiagnose bei Ihnen zuhause</li>
+            <li>✅ Digitale Verwaltung Ihres Fahrzeugs rund um die Uhr</li>
+          </ul>
+        </div>
+    
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=900" alt="Mechaniker" />
+          <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=900" alt="Rotes Auto" />
+        </div>
+      </div>
+    
+      <div class="stats">
+        <div class="stat-box">
+          <h3>674</h3>
+          <p>Glückliche Kunden</p>
+        </div>
+        <div class="stat-box">
+          <h3>987</h3>
+          <p>Fahrzeuge repariert</p>
+        </div>
+        <div class="stat-box">
+          <h3>15</h3>
+          <p>Jahre Erfahrung</p>
+        </div>
+        <div class="stat-box">
+          <h3>49</h3>
+          <p>Auszeichnungen</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Kundenrezensionen -->
+    <section id="kundenrezensionen" class="testimonials-section">
+      <h2>Kundenrezensionen</h2>
+      <div class="testimonials-container">
+        <!-- 1. Rezension -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            „Super Service, nettes Team und faire Preise. Ich bringe meinen Wagen  
+            schon seit Jahren hierher und war immer zufrieden!“
+          </p>
+          <p class="testimonial-author">– Max Mustermann</p>
+        </div>
+        <!-- 2. Rezension -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            „Schnelle und kompetente Reparaturen. Das Personal ist sehr  
+            freundlich und erklärt alle Schritte genau.“
+          </p>
+          <p class="testimonial-author">– Anna Müller</p>
+        </div>
+        <!-- 3. Rezension -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            „Klasse Werkstatt! Terminvereinbarung ging flott und das Ergebnis  
+            war top. Klare Weiterempfehlung!“
+          </p>
+          <p class="testimonial-author">– Peter Schneider</p>
+        </div>
+      </div>
+      <!-- Termin-Button unter den Rezensionen -->
+      <div class="testimonials-button">
+        <a href="termin.html" class="btn btn-primary">Termin buchen</a>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <h2>Kontakt & Öffnungszeiten</h2>
+        <p><strong>Adresse:</strong> Neue Flurstraße 19, 97320 Albertshofen</p>
+        <p><strong>Telefon:</strong> <a href="tel:01716598724">0171 6598724</a></p>
+        <p><strong>Öffnungszeiten:</strong><br>
+          Montag–Donnerstag: 9:00–16:30<br>
+          Freitag: 9:00–14:30
+        </p>
+    
+        <form class="contact-form">
+          <h3>Nachricht senden</h3>
+          <input type="text" placeholder="Ihr Name" required />
+          <input type="email" placeholder="Ihre E-Mail" required />
+          <textarea placeholder="Ihre Nachricht" required></textarea>
+          <button type="submit">Senden</button>
+        </form>
+      </div>
+    </section>
+    
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Kfz-Service Heid. Alle Rechte vorbehalten.</p>
+  </footer>
 
 </body>
 </html>
